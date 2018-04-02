@@ -1,0 +1,25 @@
+extends layout
+block form
+  h1 Simple Passport Example
+  fieldset
+    legend: h2=title.toUpperCase()
+    form(action="/" + title method="POST")
+      p
+        label(for="username") Username: 
+          input(name="username" )
+      p
+        label(for="password") Password: 
+          input(name="password")
+      if (title == 'register')
+        p
+          label Name: 
+            input(name="name")
+      p
+        input(type="submit")
+  hr
+  p or
+  p
+    if (title == 'login') 
+      a(href="/register"): button Register
+    if (title == 'register') 
+      a(href="/login"): button Login
